@@ -1,5 +1,9 @@
-<% @libraries.each do |library| %>
-  <div>
+<div class="row">
+  <div class="col-md-2 col-xs-1">
+  </div>
+
+  <div class="col-md-8 col-xs-10">
+    <% @libraries.each do |library| %>
     <h3>
       <%= link_to "#{library.name}", library_path(library) %>
     </h3>
@@ -9,3 +13,7 @@
     <br>
     <% end %>
   </div>
+
+  <div class="col-md-2 col-xs-1">
+  </div>
+</div>

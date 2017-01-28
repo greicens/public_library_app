@@ -3,19 +3,26 @@
   <head>
     <title>LibApp</title>
     <%= csrf_meta_tags %>
-
+    <!-- bootstrap css -->
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to "Home", users_path %></li>
     <% if current_user %>
-      <%= link_to "Profile", user_path(current_user) %> |
-      <%= link_to "Log Out", logout_path %>
+      <li><%= link_to "Profile", user_path(current_user) %></li>
+      <li><%= link_to "Log Out", logout_path %></li>
+      <li><%= link_to "My Libraries", user_libraries_path(current_user) %></li>
     <% else %>
-      <%= link_to "Create Account", users_new_path %> |
-      <%= link_to "Log In", login_path %>
+      <li><%= link_to "Create Account", users_new_path %></li>
+      <li><%= link_to "Log In", login_path %></li>
     <% end %>
+    <li><%= link_to "All Libraries", libraries_path %></li>
+
+  </ul>
     <% flash.each do |name, msg| %>
       <p>
         <small> <%= name.capitalize %>: <%= msg %> </small>

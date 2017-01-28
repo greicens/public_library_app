@@ -10,8 +10,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    if @user.save
+      login(@user)
+      redirect_to @user
+    else
+      flash[:error] = "Unable to add new user try again"
+      redirect_to login_path
+    end
   end
 
   def show

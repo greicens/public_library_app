@@ -1,12 +1,12 @@
 <%= form_for @library do |f| %>
-  <div>
+  <div class="form-group">
     <%= f.text_field :name, placeholder: "Name" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.number_field :floor_count, placeholder: "Floor Count" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.number_field :floor_area, placeholder: "Floor Area" %>
   </div>
-  <%= f.submit %>
+  <%= f.submit "Add Library", class: "btn btn-block btn-success" %>
 <% end %>

@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Library.destroy_all
+LibraryUser.destroy_all
+
+users_data = []
+
+4.times do
+  first = FFaker::Name.first_name
+  last = FFaker::Name.last_name
+  password = FFaker::Internet.password
+  users_data << {
+    first_name: first,
+    last_name: last,
+    email: "#{first[0]}_#{last}@example.com".downcase,
+    password_digest: password
+  }
+end
+users = User.create(users_data)
