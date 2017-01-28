@@ -16,6 +16,17 @@ class LibrariesController < ApplicationController
     @library = Library.find_by_id(params[:id])
   end
 
+  def edit
+    @library = Library.find_by_id(params[:id])
+
+  end
+
+  def update
+    library = Library.find_by_id(params[:id])
+    library.update(library_params)
+    redirect_to library_path
+  end
+
   private
   def library_params
     params.require(:library).permit(:name, :floor_count, :floor_area)

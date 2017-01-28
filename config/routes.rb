@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get '/libraries/new' => 'libraries#new', as: 'new_library'
   post '/libraries' => 'libraries#create'
   get '/libraries/:id' => 'libraries#show', as: 'library'
+  get '/libraries/:id/edit' => 'libraries#edit'
+  patch '/libraries/:id' => 'libraries#update', as: 'update_library'
 end
