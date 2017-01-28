@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/libraries/new' => 'libraries#new', as: 'new_library'
   post '/libraries' => 'libraries#create'
   get '/libraries/:id' => 'libraries#show', as: 'library'
-  get '/libraries/:id/edit' => 'libraries#edit'
+  get '/libraries/:id/edit' => 'libraries#edit', as: 'edit_library'
   patch '/libraries/:id' => 'libraries#update', as: 'update_library'
+  delete '/libraries/:id' => 'libraries#destroy', as: 'delete_library'
 end

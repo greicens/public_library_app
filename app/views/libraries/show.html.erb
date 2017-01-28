@@ -3,4 +3,6 @@
     <h4>Floor Count: <%= @library.floor_count %></h2>
     <h4>Floor Area: <%= @library.floor_area %></h2>
     <br>
+    <%= link_to "edit" , edit_library_path %>
+    <%= link_to "delete" , library_path(@library), :confirm => "Are you sure?", :method => :delete %>
   </div>
