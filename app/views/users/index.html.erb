@@ -2,4 +2,7 @@
 
 <div>
   There are currently <%= @users.length %> user(s) signed up!
+  <% @users.each do |user| %>
+  <p><%= user.first_name  %></p>
+  <%end%>
 </div>

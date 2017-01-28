@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user_params = params.require(:user).permit(:email, :password)
     @user = User.confirm(user_params)
     if @user
-      login_url(@user)
+      login(@user)
       redirect_to @user
     else
       redirect_to login_path
@@ -15,5 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    logout
+    redirect_to root_path
   end
 end
