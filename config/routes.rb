@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   patch '/libraries/:id' => 'libraries#update', as: 'update_library'
   delete '/libraries/:id' => 'libraries#destroy', as: 'delete_library'
   get '/users/:user_id/libraries' => 'library_users#index', as: 'user_libraries'
+  post '/libraries/:library_id/users' => 'library_users#create', as: 'library_users'
 end
