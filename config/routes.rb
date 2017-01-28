@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   get '/users' => 'users#index'
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
-  get '/users/:id' => 'users#show', as: 'user' 
+  get '/users/:id' => 'users#show', as: 'user'
 
   get '/login' => 'sessions#new'
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
+  get '/libraries' => 'libraries#index'
+  get '/libraries/new' => 'libraries#new', as: 'new_library'
+  post '/libraries' => 'libraries#create'
 end
