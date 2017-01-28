@@ -1,2 +1,3 @@
 class LibraryUsersController < ApplicationController
+  
 end
